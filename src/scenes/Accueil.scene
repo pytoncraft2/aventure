@@ -1,12 +1,12 @@
 {
-    "id": "51924e4b-6240-4d68-9cf4-a3bd3fda0d20",
+    "id": "358ab9ce-1e32-49eb-a55a-82fc9aea6199",
     "sceneType": "SCENE",
     "settings": {
         "exportClass": true,
         "autoImport": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Level1",
+        "sceneKey": "Accueil",
         "compilerOutputLanguage": "TYPE_SCRIPT",
         "borderWidth": 1920,
         "borderHeight": 1080
@@ -14,17 +14,28 @@
     "displayList": [
         {
             "prefabId": "7048ddbb-6963-44a4-887a-89441d015a35",
-            "id": "d5583451-df31-457f-85a0-9a4bdd0a869f",
+            "id": "ecb13fb0-e954-4164-ae74-12fe9acb91a7",
             "unlock": [
                 "x",
                 "y"
             ],
             "label": "herbe",
             "components": [],
-            "x": 225,
-            "y": 1068,
+            "x": 321,
+            "y": 1065,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "type": "Image",
+            "id": "ae3564eb-6efb-47c2-923d-2f435ddbdd90",
+            "label": "55193917",
+            "components": [],
+            "texture": {
+                "key": "55193917"
+            },
+            "x": 1133,
+            "y": 933
         }
     ],
     "plainObjects": [],

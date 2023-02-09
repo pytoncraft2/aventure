@@ -22,6 +22,9 @@ export default class Level extends Phaser.Scene {
 
 	editorCreate(): void {
 
+		// tente
+		this.add.image(1550, 888, "tente");
+
 		// Bouton_jouer
 		const bouton_jouer = new PrefabBouton(this, 959, 356);
 		this.add.existing(bouton_jouer);

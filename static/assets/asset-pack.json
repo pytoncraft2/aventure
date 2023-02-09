@@ -20,6 +20,16 @@
                 },
                 "type": "svg",
                 "key": "herbe"
+            },
+            {
+                "url": "assets/tente.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "tente"
             }
         ]
     },
