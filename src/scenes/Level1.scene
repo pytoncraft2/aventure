@@ -1,0 +1,37 @@
+{
+    "id": "51924e4b-6240-4d68-9cf4-a3bd3fda0d20",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level1",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "prefabId": "7048ddbb-6963-44a4-887a-89441d015a35",
+            "id": "d5583451-df31-457f-85a0-9a4bdd0a869f",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "herbe",
+            "components": [],
+            "x": 225,
+            "y": 1068,
+            "nestedPrefabs": [],
+            "list": []
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}
