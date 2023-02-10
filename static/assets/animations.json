@@ -1,137 +1,95 @@
 {
     "anims": [
         {
-            "key": "green-walk,yellow-walk,enemy",
+            "key": "left",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
+                    "key": "dude",
                     "frame": 0,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
+                    "key": "dude",
                     "frame": 1,
                     "duration": 0,
                     "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1,
-            "showOnStart": true
-        },
-        {
-            "key": "yellow-walk",
-            "type": "frame",
-            "frames": [
+                },
                 {
-                    "key": "characters_packed",
-                    "frame": 9,
+                    "key": "dude",
+                    "frame": 2,
                     "duration": 0,
                     "keyframe": false
                 },
                 {
-                    "key": "characters_packed",
-                    "frame": 10,
+                    "key": "dude",
+                    "frame": 3,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 10,
             "skipMissedFrames": true,
             "repeat": -1
         },
         {
-            "key": "enemy",
+            "key": "turn",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 18,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 19,
+                    "key": "dude",
+                    "frame": 4,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 6,
+            "frameRate": 24,
             "skipMissedFrames": true,
             "repeat": -1
         },
         {
-            "key": "small-closed",
+            "key": "right",
             "type": "frame",
             "frames": [
                 {
-                    "key": "characters_packed",
-                    "frame": 20,
+                    "key": "dude",
+                    "frame": 5,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude",
+                    "frame": 6,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude",
+                    "frame": 7,
+                    "duration": 0,
+                    "keyframe": false
+                },
+                {
+                    "key": "dude",
+                    "frame": 8,
                     "duration": 0,
                     "keyframe": false
                 }
             ],
-            "frameRate": 1,
+            "frameRate": 10,
             "skipMissedFrames": true,
             "repeat": -1
-        },
-        {
-            "key": "drill-walk",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 15,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 16,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1
-        },
-        {
-            "key": "bat-fly",
-            "type": "frame",
-            "frames": [
-                {
-                    "key": "characters_packed",
-                    "frame": 24,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 25,
-                    "duration": 0,
-                    "keyframe": false
-                },
-                {
-                    "key": "characters_packed",
-                    "frame": 26,
-                    "duration": 0,
-                    "keyframe": false
-                }
-            ],
-            "frameRate": 6,
-            "skipMissedFrames": true,
-            "repeat": -1,
-            "yoyo": true
         }
     ],
     "globalTimeScale": 1,
     "meta": {
         "app": "Phaser Editor 2D v3",
         "contentType": "Phaser v3 Animations"
+    },
+    "settings": {
+        "sourceLang": "JAVA_SCRIPT",
+        "esModule": false,
+        "generateCode": false
     }
 }

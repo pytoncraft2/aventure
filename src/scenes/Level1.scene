@@ -1,0 +1,389 @@
+{
+    "id": "ee6e6c15-7948-4fcb-8743-7faaf4c7161e",
+    "sceneType": "SCENE",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level1",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "3b914662-de92-440f-8c13-8616795bcce1",
+            "label": "tente",
+            "components": [],
+            "texture": {
+                "key": "tente"
+            },
+            "x": 1561,
+            "y": 636,
+            "scaleX": 0.7260412462267458,
+            "scaleY": 0.7260412462267458
+        },
+        {
+            "prefabId": "7048ddbb-6963-44a4-887a-89441d015a35",
+            "id": "b652d741-544c-42ff-a97e-3e825e6a40e4",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "herbe",
+            "components": [],
+            "x": 294,
+            "y": 1067,
+            "nestedPrefabs": [],
+            "list": []
+        },
+        {
+            "prefabId": "a065711e-bf2f-4ad1-b570-d5af334e8f14",
+            "id": "7a332964-7bc0-4b6e-bbad-915bb1f4f0be",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "player",
+            "scope": "CLASS",
+            "components": [],
+            "x": 602,
+            "y": 419
+        },
+        {
+            "type": "Layer",
+            "id": "3b6f92db-96b9-49e3-a213-26c95ab5cd10",
+            "label": "layerPlatforme",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "83bb54d6-2e71-401b-9809-452ab3864977",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platforme",
+                    "components": [],
+                    "x": 354,
+                    "y": 449,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "0f827596-1919-4903-af24-eddf50883f1f",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "platforme_1",
+                    "components": [],
+                    "x": 1570,
+                    "y": 264,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "6f9b2ddd-cb94-499d-8a87-adcc4e77d9c2",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platforme_2",
+                    "components": [],
+                    "x": 1090,
+                    "y": 111,
+                    "scaleX": 0.6051618385700501,
+                    "scaleY": 0.90278201350956,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "6ae7aac0-a0f2-4633-bfd1-157792c1fe2b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platforme_4",
+                    "components": [],
+                    "x": 935,
+                    "y": 705,
+                    "scaleX": 2.8429608315876465,
+                    "scaleY": 0.7677009268656273,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "2f35a8ef-677c-456e-ba04-831943e7d338",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "body.friction.x",
+                        "body.friction.y",
+                        "immovable"
+                    ],
+                    "label": "platforme_3",
+                    "components": [],
+                    "x": 7,
+                    "y": -414,
+                    "scaleX": 0.05882723762570574,
+                    "scaleY": 5.3735422129881805,
+                    "body.friction.x": 0,
+                    "body.friction.y": 10,
+                    "immovable": true,
+                    "nestedPrefabs": [],
+                    "list": []
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "be4b95fd-5817-432a-b029-5227f50c5d4b",
+            "label": "feu",
+            "components": [],
+            "texture": {
+                "key": "feu"
+            },
+            "x": 1629,
+            "y": 261,
+            "scaleX": 0.5142267517589454,
+            "scaleY": 0.5142267517589454
+        },
+        {
+            "type": "Layer",
+            "id": "338cae7a-28fb-4e15-a900-831f7db1b2c2",
+            "label": "controlsLayer",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+                    "id": "8b28ccd6-ec62-49f5-bba4-9bf913546d01",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "PlayerController.direction"
+                    ],
+                    "label": "btn_up",
+                    "components": [],
+                    "PlayerController.direction": "up",
+                    "x": 127,
+                    "y": 934
+                },
+                {
+                    "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+                    "id": "d02ae252-7249-4ea7-9ecf-be9fe0632678",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "texture"
+                    ],
+                    "label": "playerButton",
+                    "components": [],
+                    "texture": {
+                        "key": "ui",
+                        "frame": "btn-left"
+                    },
+                    "x": 1493,
+                    "y": 926
+                },
+                {
+                    "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+                    "id": "9a83bedb-0be5-451e-80ae-62f4e562537a",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "texture",
+                        "PlayerController.direction"
+                    ],
+                    "label": "playerButton_1",
+                    "components": [],
+                    "PlayerController.direction": "right",
+                    "texture": {
+                        "key": "ui",
+                        "frame": "btn-right"
+                    },
+                    "x": 1795,
+                    "y": 930
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "5c997dd4-8b52-431e-bdd5-56c5030ffc1a",
+            "label": "ennemyLayer",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "324ce09a-baa4-4d9c-8057-34d6e9c8e286",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "araigne",
+                    "components": [],
+                    "x": 1841,
+                    "y": -106,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "c8b1192c-eb52-496e-86ad-cae6f55aed9b",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "araigne_1",
+                    "components": [],
+                    "x": 1378.1751521894707,
+                    "y": -90.0308570567954,
+                    "scaleX": 0.6212253039645439,
+                    "scaleY": 0.6212253039645439
+                },
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "2f73b60d-7753-4172-ae4d-709ff3d9b4aa",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "points"
+                    ],
+                    "label": "araigne_2",
+                    "components": [],
+                    "x": 369,
+                    "y": -83,
+                    "scaleX": 0.573116706160824,
+                    "scaleY": 0.573116706160824
+                },
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "befcc39f-da67-4436-8bb4-877506da4cfb",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "araigne_3",
+                    "components": [],
+                    "x": 1617,
+                    "y": -392,
+                    "scaleX": 2.6995541392256976,
+                    "scaleY": 2.6995541392256976
+                },
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "896e6638-ec47-45bc-ac0a-f0add94e5119",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "araigne_4",
+                    "components": [],
+                    "x": 944.20365967982,
+                    "y": 518.3007205743385,
+                    "scaleX": 1,
+                    "scaleY": 1
+                },
+                {
+                    "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
+                    "id": "cc79df8a-b0ca-44b0-a9b1-5f3874911d9d",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "araigne_5",
+                    "components": [],
+                    "x": 1302.9821963175486,
+                    "y": 581.6145799809965,
+                    "scaleX": 1,
+                    "scaleY": 1
+                }
+            ]
+        }
+    ],
+    "plainObjects": [
+        {
+            "id": "2f647d32-338f-4335-a626-b02a7261516f",
+            "type": "Keyboard.Key",
+            "label": "leftKey",
+            "keyCode": "LEFT"
+        },
+        {
+            "id": "028e0393-1ee3-415e-b17d-dcc368f29b24",
+            "type": "Keyboard.Key",
+            "label": "rightKey",
+            "keyCode": "RIGHT"
+        },
+        {
+            "id": "7d5d021b-7f24-427b-968d-1a3d47feb680",
+            "type": "Keyboard.Key",
+            "label": "upKey",
+            "keyCode": "UP"
+        },
+        {
+            "id": "f8b775ee-e3d7-43b0-b082-f05749701b2c",
+            "type": "Keyboard.Key",
+            "label": "downKey",
+            "keyCode": "DOWN"
+        },
+        {
+            "id": "7ceba1bf-5873-4a43-9707-e84530992882",
+            "type": "Keyboard.Key",
+            "label": "spaceKey"
+        },
+        {
+            "id": "637e4914-1d5b-4383-b4bb-4bb3592d261d",
+            "type": "Collider",
+            "label": "collider_player_platforme",
+            "scope": "METHOD",
+            "object1": "player",
+            "object2": "layerPlatforme.list"
+        },
+        {
+            "id": "b71b03ab-03a3-497d-bbe3-adfbafeca53c",
+            "type": "Collider",
+            "label": "collider_spider_platforme",
+            "scope": "METHOD",
+            "object1": "ennemyLayer.list",
+            "object2": "layerPlatforme.list"
+        },
+        {
+            "id": "d037ba3d-aace-4be2-885e-bc77b21bc548",
+            "type": "Collider",
+            "label": "collider_player_ennemy",
+            "scope": "METHOD",
+            "object1": "ennemyLayer.list",
+            "object2": "player"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    }
+}

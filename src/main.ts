@@ -24,6 +24,13 @@ const game = new Phaser.Game({
     width: 1920,
     height: 1080,
     backgroundColor: "#eee",
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 900 },
+            debug: true
+        }
+    },
     scale: {
         mode: Phaser.Scale.ScaleModes.FIT,
         autoCenter: Phaser.Scale.Center.CENTER_BOTH

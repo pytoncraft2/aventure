@@ -2,9 +2,37 @@
     "section1": {
         "files": [
             {
-                "url": "assets/55193917.png",
+                "url": "assets/animations.json",
+                "type": "animation",
+                "key": "animations"
+            },
+            {
+                "url": "assets/araigne.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "araigne"
+            },
+            {
+                "url": "assets/dude.png",
+                "frameConfig": {
+                    "frameWidth": 32,
+                    "frameHeight": 48,
+                    "startFrame": 0,
+                    "endFrame": -1,
+                    "spacing": 0,
+                    "margin": 0
+                },
+                "type": "spritesheet",
+                "key": "dude"
+            },
+            {
+                "url": "assets/feu.png",
                 "type": "image",
-                "key": "55193917"
+                "key": "feu"
             },
             {
                 "url": "assets/FufuSuperDino.png",
@@ -30,6 +58,12 @@
                 },
                 "type": "svg",
                 "key": "tente"
+            },
+            {
+                "atlasURL": "assets/atlas/ui.json",
+                "textureURL": "assets/atlas/ui.png",
+                "type": "atlas",
+                "key": "ui"
             }
         ]
     },

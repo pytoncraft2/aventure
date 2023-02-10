@@ -84,10 +84,6 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		//this.bouton_jouer
-			//.setInteractive({ useHandCursor: true })
-		    //.on('pointerdown', function() {
-		//});
 	}
 
 	/* END-USER-CODE */
