@@ -4,8 +4,8 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
+import Joueur from "./Joueur";
 import Herbe from "./Herbe";
-import PrefabJoueur from "./PrefabJoueur";
 import Platforme from "./Platforme";
 import PlayerButton from "./PlayerButton";
 import PlayerController from "../components/PlayerController";
@@ -40,18 +40,18 @@ export default class Level1 extends Phaser.Scene {
 		// spaceKey
 		const spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
+		// player
+		const player = new Joueur(this, 247, 411);
+		this.add.existing(player);
+
 		// tente
-		const tente = this.add.image(1561, 636, "tente");
+		const tente = this.add.image(218, 636, "tente");
 		tente.scaleX = 0.7260412462267458;
 		tente.scaleY = 0.7260412462267458;
 
 		// herbe
 		const herbe = new Herbe(this, 294, 1067);
 		this.add.existing(herbe);
-
-		// player
-		const player = new PrefabJoueur(this, 602, 419);
-		this.add.existing(player);
 
 		// layerPlatforme
 		const layerPlatforme = this.add.layer();
@@ -71,7 +71,7 @@ export default class Level1 extends Phaser.Scene {
 		layerPlatforme.add(platforme_2);
 
 		// platforme_4
-		const platforme_4 = new Platforme(this, 935, 705);
+		const platforme_4 = new Platforme(this, 6, 705);
 		platforme_4.scaleX = 2.8429608315876465;
 		platforme_4.scaleY = 0.7677009268656273;
 		layerPlatforme.add(platforme_4);
@@ -84,6 +84,12 @@ export default class Level1 extends Phaser.Scene {
 		platforme_3.body.friction.y = 10;
 		platforme_3.body.immovable = true;
 		layerPlatforme.add(platforme_3);
+
+		// platforme_5
+		const platforme_5 = new Platforme(this, 2262, 855);
+		platforme_5.scaleX = 2.8429608315876465;
+		platforme_5.scaleY = 0.7677009268656273;
+		layerPlatforme.add(platforme_5);
 
 		// feu
 		const feu = this.add.image(1629, 261, "feu");
@@ -104,6 +110,13 @@ export default class Level1 extends Phaser.Scene {
 		// playerButton_1
 		const playerButton_1 = new PlayerButton(this, 1795, 930, "ui", "btn-right");
 		controlsLayer.add(playerButton_1);
+
+		// playerButton_2
+		const playerButton_2 = new PlayerButton(this, 1645, 628, "ui", "btn-right");
+		playerButton_2.scaleX = 2.2625;
+		playerButton_2.scaleY = 2.2625;
+		playerButton_2.angle = 91;
+		controlsLayer.add(playerButton_2);
 
 		// ennemyLayer
 		const ennemyLayer = this.add.layer();
@@ -161,6 +174,10 @@ export default class Level1 extends Phaser.Scene {
 		const playerButton_1PlayerController = PlayerController.getComponent(playerButton_1);
 		playerButton_1PlayerController.direction = "right";
 
+		// playerButton_2 (components)
+		const playerButton_2PlayerController = PlayerController.getComponent(playerButton_2);
+		playerButton_2PlayerController.direction = "down";
+
 		this.player = player;
 		this.leftKey = leftKey;
 		this.rightKey = rightKey;
@@ -171,7 +188,7 @@ export default class Level1 extends Phaser.Scene {
 		this.events.emit("scene-awake");
 	}
 
-	private player!: PrefabJoueur;
+	private player!: Joueur;
 	private leftKey!: Phaser.Input.Keyboard.Key;
 	private rightKey!: Phaser.Input.Keyboard.Key;
 	private upKey!: Phaser.Input.Keyboard.Key;
@@ -182,6 +199,7 @@ export default class Level1 extends Phaser.Scene {
 	private leftDown = false;
 	private rightDown = false;
 	private upDown = false;
+	private downDown = false;
 	// private leftKey: Phaser.Input.Keyboard.Key | undefined;
 	// private rightKey: Phaser.Input.Keyboard.Key | undefined;
 	// private upKey: Phaser.Input.Keyboard.Key | undefined;
@@ -192,8 +210,25 @@ export default class Level1 extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-		console.log("LEVEL 1 1");
 
+		this.scale.startFullscreen();
+
+        var FKey = this.input.keyboard.addKey('F');
+
+        FKey.on('down', function () {
+
+            if (this.scale.isFullscreen)
+            {
+                //button.setFrame(0);
+                this.scale.stopFullscreen();
+            }
+            else
+            {
+                //button.setFrame(1);
+                this.scale.startFullscreen();
+            }
+
+        }, this);
 	}
 	update(time: number, delta: number): void {
 
@@ -219,6 +254,8 @@ export default class Level1 extends Phaser.Scene {
 		this.leftDown = this.leftDown || this.isKeyDown(this.leftKey);
 		this.rightDown = this.rightDown || this.isKeyDown(this.rightKey);
 		this.upDown = this.upDown || this.isKeyDown(this.upKey) || this.isKeyDown(this.spaceKey);
+		this.downDown = this.downDown || this.isKeyDown(this.downKey);
+
 
 		// if (this.rightDown) {
 			// console.log("RIGHT");
@@ -229,17 +266,17 @@ export default class Level1 extends Phaser.Scene {
 		else if (this.rightDown) {
 
 			this.player.moveRight();
+		} else if (this.downDown) {
+			this.player.moveDown();
 		} else {
-
 			this.player.stopMoving();
-
 		}
 
 		if (this.upDown && this.player.body.touching.down) {
 			this.player.jump();
 		}
 
-		this.leftDown = this.rightDown = this.upDown = false;
+		this.leftDown = this.rightDown = this.upDown = this.downDown = false;
 	}
 
 	/* END-USER-CODE */

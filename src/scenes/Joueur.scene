@@ -1,5 +1,5 @@
 {
-    "id": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+    "id": "f1d2dfef-c050-4e60-9896-bcfcb8b7591d",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,23 +14,17 @@
     "displayList": [
         {
             "type": "Image",
-            "id": "342cd136-bcd8-46d8-8e60-62b6d2f022c0",
-            "label": "btn_up",
-            "components": [
-                "ScrollFactor",
-                "PlayerController"
-            ],
+            "id": "c1055e26-dadf-40fa-8ab6-39a0e06c27cc",
+            "label": "huipat",
+            "components": [],
             "texture": {
-                "key": "ui",
-                "frame": "btn-up"
+                "key": "huipat"
             },
-            "scaleX": 2.2625,
-            "scaleY": 2.2625,
-            "alpha": 0.3,
-            "alphaTopLeft": 0.3,
-            "alphaTopRight": 0.3,
-            "alphaBottomLeft": 0.3,
-            "alphaBottomRight": 0.3
+            "x": 11,
+            "ArcadeComponent.active": true,
+            "mass": 20,
+            "body.width": 200,
+            "body.height": 189
         }
     ],
     "plainObjects": [],

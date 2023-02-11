@@ -16,6 +16,11 @@ export default class PlayerButton extends Phaser.GameObjects.Image {
 
 		this.scaleX = 2.2625;
 		this.scaleY = 2.2625;
+		this.alpha = 0.3;
+		this.alphaTopLeft = 0.3;
+		this.alphaTopRight = 0.3;
+		this.alphaBottomLeft = 0.3;
+		this.alphaBottomRight = 0.3;
 
 		// this (components)
 		new ScrollFactor(this);

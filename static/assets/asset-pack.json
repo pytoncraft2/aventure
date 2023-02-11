@@ -50,6 +50,11 @@
                 "key": "herbe"
             },
             {
+                "url": "assets/huipat.png",
+                "type": "image",
+                "key": "huipat"
+            },
+            {
                 "url": "assets/tente.svg",
                 "svgConfig": {
                     "width": 0,

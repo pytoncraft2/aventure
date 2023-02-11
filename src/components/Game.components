@@ -54,7 +54,8 @@
                         "options": [
                             "left",
                             "right",
-                            "up"
+                            "up",
+                            "down"
                         ]
                     }
                 }

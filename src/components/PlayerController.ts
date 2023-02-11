@@ -27,7 +27,7 @@ export default class PlayerController extends UserComponent {
 
 	private gameObject: Phaser.GameObjects.Image;
 	public player!: Player|undefined|PlayerPrefab;
-	public direction: "left"|"right"|"up" = "left";
+	public direction: "left"|"right"|"up"|"down" = "left";
 
 	/* START-USER-CODE */
 
@@ -46,7 +46,7 @@ export default class PlayerController extends UserComponent {
 			console.log("update");
 			// console.log(this.scene.player);
 			console.log(this.direction);
-			
+
 			this.scene.player.pressButton(this.direction);
 		}		
 	}

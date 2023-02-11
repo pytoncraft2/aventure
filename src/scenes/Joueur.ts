@@ -7,34 +7,25 @@ import Phaser from "phaser";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
-export default interface PrefabJoueur {
+export default interface Joueur {
 
 	 body: Phaser.Physics.Arcade.Body;
 }
 
-export default class PrefabJoueur extends Phaser.Physics.Arcade.Sprite {
+export default class Joueur extends Phaser.GameObjects.Image {
 
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
-		super(scene, x ?? 0, y ?? 0, texture || "dude", frame ?? 0);
+		super(scene, x ?? 11, y ?? 0, texture || "huipat", frame);
 
-		this.scaleX = 1.989685485224887;
-		this.scaleY = 1.989685485224887;
 		scene.physics.add.existing(this, false);
 		this.body.mass = 20;
-		this.body.setSize(32, 48, false);
+		this.body.setSize(200, 189, false);
 
 		/* START-USER-CTR-CODE */
-		this.velY = 890;
-		this.velX = 360;
-		const params = new Proxy(new URLSearchParams(window.location.search), {
-  			get: (searchParams, prop) => searchParams.get(prop),
-		});
-		let value = params.p;
-		console.log(this.list);
+		this.velY = 1090;
+		this.velX = 1060;
 		/* END-USER-CTR-CODE */
 	}
-
-	public texture!: {key:string,frame?:string|number};
 
 	/* START-USER-CODE */
 
@@ -43,22 +34,25 @@ export default class PrefabJoueur extends Phaser.Physics.Arcade.Sprite {
 		this.play("turn");
 	}
 	jump() {
-		this.setVelocityY(-this.velY);
+		this.body.setVelocityY(-this.velY);
 	}
 	stopMoving() {
-			this.setVelocityX(0);
-			this.anims.play('turn');
+			this.body.setVelocityX(0);
 	}
 	moveRight() {
-			this.setVelocityX(this.velX);
-			this.anims.play('right', true);
+			this.body.setVelocityX(this.velX);
 	}
 	moveLeft() {
-		this.setVelocityX(-this.velX)
-		this.play("left", true)
+		this.body.setVelocityX(-this.velX)
+	}
+	moveDown() {
+		this.body.checkCollision.none = true;
+		this.body.setVelocityY(this.velY)
+
+		var timer = this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), null, this);  // delay in ms
 	}
 
-	pressButton(direction: "left" | "right" | "up") {
+	pressButton(direction: "left" | "right" | "up" | "down") {
 		console.log(direction);
 
 		switch (direction) {
@@ -72,6 +66,10 @@ export default class PrefabJoueur extends Phaser.Physics.Arcade.Sprite {
 
 			case "up":
 				this.scene.upDown = true;
+				break;
+				
+			case "down":
+				this.scene.downDown = true;
 				break;
 		}
 	}

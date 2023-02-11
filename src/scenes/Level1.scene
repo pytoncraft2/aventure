@@ -13,6 +13,19 @@
     },
     "displayList": [
         {
+            "prefabId": "f1d2dfef-c050-4e60-9896-bcfcb8b7591d",
+            "id": "d1b5607f-68db-4a09-bf50-cdc458e6d075",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "player",
+            "scope": "CLASS",
+            "components": [],
+            "x": 247,
+            "y": 411
+        },
+        {
             "type": "Image",
             "id": "3b914662-de92-440f-8c13-8616795bcce1",
             "label": "tente",
@@ -20,7 +33,7 @@
             "texture": {
                 "key": "tente"
             },
-            "x": 1561,
+            "x": 218,
             "y": 636,
             "scaleX": 0.7260412462267458,
             "scaleY": 0.7260412462267458
@@ -38,19 +51,6 @@
             "y": 1067,
             "nestedPrefabs": [],
             "list": []
-        },
-        {
-            "prefabId": "a065711e-bf2f-4ad1-b570-d5af334e8f14",
-            "id": "7a332964-7bc0-4b6e-bbad-915bb1f4f0be",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "player",
-            "scope": "CLASS",
-            "components": [],
-            "x": 602,
-            "y": 419
         },
         {
             "type": "Layer",
@@ -115,7 +115,7 @@
                     ],
                     "label": "platforme_4",
                     "components": [],
-                    "x": 935,
+                    "x": 6,
                     "y": 705,
                     "scaleX": 2.8429608315876465,
                     "scaleY": 0.7677009268656273,
@@ -143,6 +143,24 @@
                     "body.friction.x": 0,
                     "body.friction.y": 10,
                     "immovable": true,
+                    "nestedPrefabs": [],
+                    "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "6cb1765a-7bc7-45bc-87db-2af601502f92",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platforme_5",
+                    "components": [],
+                    "x": 2262,
+                    "y": 855,
+                    "scaleX": 2.8429608315876465,
+                    "scaleY": 0.7677009268656273,
                     "nestedPrefabs": [],
                     "list": []
                 }
@@ -216,6 +234,31 @@
                     },
                     "x": 1795,
                     "y": 930
+                },
+                {
+                    "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+                    "id": "e8826dc2-71a6-4f1c-8326-c974757b25a5",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "texture",
+                        "PlayerController.direction",
+                        "scaleX",
+                        "scaleY",
+                        "angle"
+                    ],
+                    "label": "playerButton_2",
+                    "components": [],
+                    "PlayerController.direction": "down",
+                    "texture": {
+                        "key": "ui",
+                        "frame": "btn-right"
+                    },
+                    "x": 1645,
+                    "y": 628,
+                    "scaleX": 2.2625,
+                    "scaleY": 2.2625,
+                    "angle": 91
                 }
             ]
         },

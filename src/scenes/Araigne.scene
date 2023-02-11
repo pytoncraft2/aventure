@@ -24,7 +24,6 @@
             "body.velocity.x": -200,
             "body.bounce.x": 1,
             "collideWorldBounds": true,
-            "mass": 10,
             "body.width": 228,
             "body.height": 79
         }
@@ -35,5 +34,17 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "texture",
+            "label": "Texture",
+            "tooltip": "Texture",
+            "defValue": "{\"key\":\"araigne\"}",
+            "customDefinition": false,
+            "type": {
+                "id": "texture-config"
+            }
+        }
+    ]
 }

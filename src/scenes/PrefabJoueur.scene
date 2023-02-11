@@ -11,29 +11,24 @@
         "borderWidth": 1920,
         "borderHeight": 1080
     },
-    "displayList": [
-        {
-            "type": "ArcadeSprite",
-            "id": "8bb2c9eb-9067-48df-bd90-404a9feef451",
-            "label": "dude0",
-            "components": [],
-            "texture": {
-                "key": "dude",
-                "frame": 0
-            },
-            "scaleX": 1.989685485224887,
-            "scaleY": 1.989685485224887,
-            "ArcadeComponent.active": true,
-            "mass": 20,
-            "body.width": 32,
-            "body.height": 48
-        }
-    ],
+    "displayList": [],
     "plainObjects": [],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "texture",
+            "label": "Texture",
+            "tooltip": "Property 1",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "texture-config"
+            }
+        }
+    ]
 }

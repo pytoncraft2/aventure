@@ -20,22 +20,23 @@ export default class Araigne extends Phaser.GameObjects.Image {
 		scene.physics.add.existing(this, false);
 		this.body.velocity.x = -200;
 		this.body.bounce.x = 1;
-		this.body.mass = 10;
 		this.body.collideWorldBounds = true;
 		this.body.setSize(228, 79, false);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+	//this.scene.physics.world.wrap(this);
 		/* END-USER-CTR-CODE */
 	}
 
+	public texture: {key:string,frame?:string|number} = {"key":"araigne"};
+
 	/* START-USER-CODE */
 
-	// Write your code here.
 
+update() {
+	//this.scene.physics.world.wrap(this);
+}
 	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */
-
-// You can write more code here
