@@ -24,7 +24,8 @@ export default class PlayerButton extends Phaser.GameObjects.Image {
 
 		// this (components)
 		new ScrollFactor(this);
-		new PlayerController(this);
+		const thisPlayerController = new PlayerController(this);
+		thisPlayerController.direction = "space";
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

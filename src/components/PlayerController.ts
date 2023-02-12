@@ -27,7 +27,7 @@ export default class PlayerController extends UserComponent {
 
 	private gameObject: Phaser.GameObjects.Image;
 	public player!: Player|undefined|PlayerPrefab;
-	public direction: "left"|"right"|"up"|"down" = "left";
+	public direction: "left"|"right"|"up"|"down"|"space" = "left";
 
 	/* START-USER-CODE */
 

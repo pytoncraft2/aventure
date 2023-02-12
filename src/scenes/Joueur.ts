@@ -18,12 +18,12 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		super(scene, x ?? 11, y ?? 0, texture || "huipat", frame);
 
 		scene.physics.add.existing(this, false);
-		this.body.mass = 20;
+		this.body.gravity.y = 1000;
 		this.body.setSize(200, 189, false);
 
 		/* START-USER-CTR-CODE */
-		this.velY = 1090;
-		this.velX = 1060;
+		this.velY = 1210;
+		this.velX = 860;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -34,7 +34,9 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		this.play("turn");
 	}
 	jump() {
+		this.body.checkCollision.none = true;
 		this.body.setVelocityY(-this.velY);
+		var timer = this.scene.time.delayedCall(500, () => (this.body.checkCollision.none = false), null, this);
 	}
 	stopMoving() {
 			this.body.setVelocityX(0);
@@ -52,7 +54,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		var timer = this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), null, this);  // delay in ms
 	}
 
-	pressButton(direction: "left" | "right" | "up" | "down") {
+	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
 		console.log(direction);
 
 		switch (direction) {
@@ -67,9 +69,12 @@ export default class Joueur extends Phaser.GameObjects.Image {
 			case "up":
 				this.scene.upDown = true;
 				break;
-				
+
 			case "down":
 				this.scene.downDown = true;
+				break;
+			case "space":
+				this.scene.spaceDown = true;
 				break;
 		}
 	}

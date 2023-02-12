@@ -5,11 +5,12 @@
 
 import Phaser from "phaser";
 import Joueur from "./Joueur";
-import Herbe from "./Herbe";
 import Platforme from "./Platforme";
+import InteractiveObjet from "../components/InteractiveObjet";
 import PlayerButton from "./PlayerButton";
 import PlayerController from "../components/PlayerController";
 import Araigne from "./Araigne";
+import PrefabChauveSouris from "./PrefabChauveSouris";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -41,7 +42,7 @@ export default class Level1 extends Phaser.Scene {
 		const spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 		// player
-		const player = new Joueur(this, 247, 411);
+		const player = new Joueur(this, 247, 296);
 		this.add.existing(player);
 
 		// tente
@@ -49,15 +50,11 @@ export default class Level1 extends Phaser.Scene {
 		tente.scaleX = 0.7260412462267458;
 		tente.scaleY = 0.7260412462267458;
 
-		// herbe
-		const herbe = new Herbe(this, 294, 1067);
-		this.add.existing(herbe);
-
 		// layerPlatforme
 		const layerPlatforme = this.add.layer();
 
 		// platforme
-		const platforme = new Platforme(this, 354, 449);
+		const platforme = new Platforme(this, 354, 357);
 		layerPlatforme.add(platforme);
 
 		// platforme_1
@@ -76,20 +73,17 @@ export default class Level1 extends Phaser.Scene {
 		platforme_4.scaleY = 0.7677009268656273;
 		layerPlatforme.add(platforme_4);
 
-		// platforme_3
-		const platforme_3 = new Platforme(this, 7, -414);
-		platforme_3.scaleX = 0.05882723762570574;
-		platforme_3.scaleY = 5.3735422129881805;
-		platforme_3.body.friction.x = 0;
-		platforme_3.body.friction.y = 10;
-		platforme_3.body.immovable = true;
-		layerPlatforme.add(platforme_3);
-
 		// platforme_5
 		const platforme_5 = new Platforme(this, 2262, 855);
 		platforme_5.scaleX = 2.8429608315876465;
 		platforme_5.scaleY = 0.7677009268656273;
 		layerPlatforme.add(platforme_5);
+
+		// platforme_6
+		const platforme_6 = new Platforme(this, -271, 1017);
+		platforme_6.scaleX = 2.8429608315876465;
+		platforme_6.scaleY = 0.7677009268656273;
+		layerPlatforme.add(platforme_6);
 
 		// feu
 		const feu = this.add.image(1629, 261, "feu");
@@ -112,11 +106,15 @@ export default class Level1 extends Phaser.Scene {
 		controlsLayer.add(playerButton_1);
 
 		// playerButton_2
-		const playerButton_2 = new PlayerButton(this, 1645, 628, "ui", "btn-right");
+		const playerButton_2 = new PlayerButton(this, 456, 945, "ui", "btn-right");
 		playerButton_2.scaleX = 2.2625;
 		playerButton_2.scaleY = 2.2625;
 		playerButton_2.angle = 91;
 		controlsLayer.add(playerButton_2);
+
+		// playerButton_3
+		const playerButton_3 = new PlayerButton(this, 1651, 613);
+		controlsLayer.add(playerButton_3);
 
 		// ennemyLayer
 		const ennemyLayer = this.add.layer();
@@ -140,7 +138,7 @@ export default class Level1 extends Phaser.Scene {
 		ennemyLayer.add(araigne_2);
 
 		// araigne_3
-		const araigne_3 = new Araigne(this, 1617, -392);
+		const araigne_3 = new Araigne(this, 1617, 553);
 		araigne_3.scaleX = 2.6995541392256976;
 		araigne_3.scaleY = 2.6995541392256976;
 		ennemyLayer.add(araigne_3);
@@ -157,6 +155,10 @@ export default class Level1 extends Phaser.Scene {
 		araigne_5.scaleY = 1;
 		ennemyLayer.add(araigne_5);
 
+		// chauve_souris
+		const chauve_souris = new PrefabChauveSouris(this, 555, 195);
+		this.add.existing(chauve_souris);
+
 		// collider_player_platforme
 		this.physics.add.collider(player, layerPlatforme.list);
 
@@ -165,6 +167,9 @@ export default class Level1 extends Phaser.Scene {
 
 		// collider_player_ennemy
 		this.physics.add.collider(ennemyLayer.list, player);
+
+		// feu (components)
+		new InteractiveObjet(feu);
 
 		// btn_up (components)
 		const btn_upPlayerController = PlayerController.getComponent(btn_up);
@@ -200,10 +205,7 @@ export default class Level1 extends Phaser.Scene {
 	private rightDown = false;
 	private upDown = false;
 	private downDown = false;
-	// private leftKey: Phaser.Input.Keyboard.Key | undefined;
-	// private rightKey: Phaser.Input.Keyboard.Key | undefined;
-	// private upKey: Phaser.Input.Keyboard.Key | undefined;
-	// private spaceKey: Phaser.Input.Keyboard.Key | undefined;
+	private spaceDown = false;
 
 	// Write your code here
 
@@ -253,17 +255,18 @@ export default class Level1 extends Phaser.Scene {
 
 		this.leftDown = this.leftDown || this.isKeyDown(this.leftKey);
 		this.rightDown = this.rightDown || this.isKeyDown(this.rightKey);
-		this.upDown = this.upDown || this.isKeyDown(this.upKey) || this.isKeyDown(this.spaceKey);
+		this.upDown = this.upDown || this.isKeyDown(this.upKey) ;
+		// this.spaceDown = this.spaceDown || this.isKeyDown(this.spaceKey);
 		this.downDown = this.downDown || this.isKeyDown(this.downKey);
 
 
-		// if (this.rightDown) {
-			// console.log("RIGHT");
-		// }
+
+		if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+			console.log("SPLASH!");
+		}
 		if (this.leftDown) {
 			this.player.moveLeft();
-		}
-		else if (this.rightDown) {
+		} else if (this.rightDown) {
 
 			this.player.moveRight();
 		} else if (this.downDown) {
@@ -276,7 +279,7 @@ export default class Level1 extends Phaser.Scene {
 			this.player.jump();
 		}
 
-		this.leftDown = this.rightDown = this.upDown = this.downDown = false;
+		this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = false;
 	}
 
 	/* END-USER-CODE */

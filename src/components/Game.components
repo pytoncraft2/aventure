@@ -55,7 +55,8 @@
                             "left",
                             "right",
                             "up",
-                            "down"
+                            "down",
+                            "space"
                         ]
                     }
                 }

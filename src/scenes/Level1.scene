@@ -23,7 +23,7 @@
             "scope": "CLASS",
             "components": [],
             "x": 247,
-            "y": 411
+            "y": 296
         },
         {
             "type": "Image",
@@ -37,20 +37,6 @@
             "y": 636,
             "scaleX": 0.7260412462267458,
             "scaleY": 0.7260412462267458
-        },
-        {
-            "prefabId": "7048ddbb-6963-44a4-887a-89441d015a35",
-            "id": "b652d741-544c-42ff-a97e-3e825e6a40e4",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "herbe",
-            "components": [],
-            "x": 294,
-            "y": 1067,
-            "nestedPrefabs": [],
-            "list": []
         },
         {
             "type": "Layer",
@@ -68,7 +54,7 @@
                     "label": "platforme",
                     "components": [],
                     "x": 354,
-                    "y": 449,
+                    "y": 357,
                     "nestedPrefabs": [],
                     "list": []
                 },
@@ -124,30 +110,6 @@
                 },
                 {
                     "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
-                    "id": "2f35a8ef-677c-456e-ba04-831943e7d338",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY",
-                        "body.friction.x",
-                        "body.friction.y",
-                        "immovable"
-                    ],
-                    "label": "platforme_3",
-                    "components": [],
-                    "x": 7,
-                    "y": -414,
-                    "scaleX": 0.05882723762570574,
-                    "scaleY": 5.3735422129881805,
-                    "body.friction.x": 0,
-                    "body.friction.y": 10,
-                    "immovable": true,
-                    "nestedPrefabs": [],
-                    "list": []
-                },
-                {
-                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
                     "id": "6cb1765a-7bc7-45bc-87db-2af601502f92",
                     "unlock": [
                         "x",
@@ -163,6 +125,24 @@
                     "scaleY": 0.7677009268656273,
                     "nestedPrefabs": [],
                     "list": []
+                },
+                {
+                    "prefabId": "635147c7-2f16-4b58-ba7c-0d4d327b0a2c",
+                    "id": "a7d8dcae-7c6a-4b19-b2da-52c7310c73c3",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY"
+                    ],
+                    "label": "platforme_6",
+                    "components": [],
+                    "x": -271,
+                    "y": 1017,
+                    "scaleX": 2.8429608315876465,
+                    "scaleY": 0.7677009268656273,
+                    "nestedPrefabs": [],
+                    "list": []
                 }
             ]
         },
@@ -170,7 +150,9 @@
             "type": "Image",
             "id": "be4b95fd-5817-432a-b029-5227f50c5d4b",
             "label": "feu",
-            "components": [],
+            "components": [
+                "InteractiveObjet"
+            ],
             "texture": {
                 "key": "feu"
             },
@@ -254,11 +236,23 @@
                         "key": "ui",
                         "frame": "btn-right"
                     },
-                    "x": 1645,
-                    "y": 628,
+                    "x": 456,
+                    "y": 945,
                     "scaleX": 2.2625,
                     "scaleY": 2.2625,
                     "angle": 91
+                },
+                {
+                    "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
+                    "id": "7d4f19c0-a304-468b-af60-bd0fdd8cca8b",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "playerButton_3",
+                    "components": [],
+                    "x": 1651,
+                    "y": 613
                 }
             ]
         },
@@ -329,7 +323,7 @@
                     "label": "araigne_3",
                     "components": [],
                     "x": 1617,
-                    "y": -392,
+                    "y": 553,
                     "scaleX": 2.6995541392256976,
                     "scaleY": 2.6995541392256976
                 },
@@ -366,6 +360,18 @@
                     "scaleY": 1
                 }
             ]
+        },
+        {
+            "prefabId": "4701ee55-578b-4b6b-ba51-962b4808c8a6",
+            "id": "3bd60cf1-def8-4a35-a878-6b916d73def0",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "chauve_souris",
+            "components": [],
+            "x": 555,
+            "y": 195
         }
     ],
     "plainObjects": [

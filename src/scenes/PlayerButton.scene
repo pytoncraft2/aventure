@@ -20,6 +20,7 @@
                 "ScrollFactor",
                 "PlayerController"
             ],
+            "PlayerController.direction": "space",
             "texture": {
                 "key": "ui",
                 "frame": "btn-up"
