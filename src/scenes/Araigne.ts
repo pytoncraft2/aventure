@@ -20,7 +20,6 @@ export default class Araigne extends Phaser.GameObjects.Image {
 		scene.physics.add.existing(this, false);
 		this.body.velocity.x = -200;
 		this.body.bounce.x = 1;
-		this.body.collideWorldBounds = true;
 		this.body.setSize(228, 79, false);
 
 		/* START-USER-CTR-CODE */
@@ -34,7 +33,7 @@ export default class Araigne extends Phaser.GameObjects.Image {
 
 
 update() {
-	//this.scene.physics.world.wrap(this);
+	this.scene.physics.world.wrap(this, 100);
 }
 	/* END-USER-CODE */
 }

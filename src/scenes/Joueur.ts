@@ -36,15 +36,25 @@ export default class Joueur extends Phaser.GameObjects.Image {
 	jump() {
 		this.body.checkCollision.none = true;
 		this.body.setVelocityY(-this.velY);
+		var tween = this.scene.tweens.add({
+    targets: this,
+    angle: this.flipX ? -20 : 20,
+    ease: 'Back',       // 'Cubic', 'Elastic', 'Bounce', 'Back'
+    duration: 300,
+    repeat: 0,            // -1: infinity
+    yoyo: true
+});
 		var timer = this.scene.time.delayedCall(500, () => (this.body.checkCollision.none = false), null, this);
 	}
 	stopMoving() {
 			this.body.setVelocityX(0);
 	}
 	moveRight() {
-			this.body.setVelocityX(this.velX);
+		this.setFlipX(false);
+		this.body.setVelocityX(this.velX);
 	}
 	moveLeft() {
+		this.setFlipX(true);
 		this.body.setVelocityX(-this.velX)
 	}
 	moveDown() {

@@ -260,6 +260,7 @@
             "type": "Layer",
             "id": "5c997dd4-8b52-431e-bdd5-56c5030ffc1a",
             "label": "ennemyLayer",
+            "scope": "CLASS",
             "components": [],
             "list": [
                 {
@@ -334,14 +335,16 @@
                         "x",
                         "y",
                         "scaleX",
-                        "scaleY"
+                        "scaleY",
+                        "alpha"
                     ],
                     "label": "araigne_4",
                     "components": [],
                     "x": 944.20365967982,
                     "y": 518.3007205743385,
                     "scaleX": 1,
-                    "scaleY": 1
+                    "scaleY": 1,
+                    "alpha": 0.5
                 },
                 {
                     "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
@@ -372,6 +375,87 @@
             "components": [],
             "x": 555,
             "y": 195
+        },
+        {
+            "type": "Layer",
+            "id": "0196975a-c40d-44d2-b3ea-bc44da879cea",
+            "label": "groupe_vie",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "f65248ef-3455-4225-b3d1-ea61f62732ef",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur",
+                    "components": [],
+                    "x": 57,
+                    "y": 45
+                },
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "404255ef-4dd6-49e0-a6d1-437561223579",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur_1",
+                    "components": [],
+                    "x": 138,
+                    "y": 45
+                },
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "cdbd3c09-6246-43ce-ae57-a3b714a1ea8a",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur_2",
+                    "components": [],
+                    "x": 219,
+                    "y": 45
+                },
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "f5b64187-b77b-4a97-85ea-5de263dc6001",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur_3",
+                    "components": [],
+                    "x": 300,
+                    "y": 45
+                },
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "002d415c-8281-4ac5-a70b-d99bc8a00dd3",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur_4",
+                    "components": [],
+                    "x": 381,
+                    "y": 45
+                },
+                {
+                    "prefabId": "69762efe-02ca-4b97-8f5a-2ff13983d6db",
+                    "id": "1238fc3d-a6c3-4161-ba38-c18892c6137d",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "coeur_5",
+                    "components": [],
+                    "x": 462,
+                    "y": 45
+                }
+            ]
         }
     ],
     "plainObjects": [

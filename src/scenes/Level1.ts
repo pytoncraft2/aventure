@@ -11,6 +11,7 @@ import PlayerButton from "./PlayerButton";
 import PlayerController from "../components/PlayerController";
 import Araigne from "./Araigne";
 import PrefabChauveSouris from "./PrefabChauveSouris";
+import Coeur from "./Coeur";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -147,6 +148,7 @@ export default class Level1 extends Phaser.Scene {
 		const araigne_4 = new Araigne(this, 944.20365967982, 518.3007205743385);
 		araigne_4.scaleX = 1;
 		araigne_4.scaleY = 1;
+		araigne_4.alpha = 0.5;
 		ennemyLayer.add(araigne_4);
 
 		// araigne_5
@@ -158,6 +160,33 @@ export default class Level1 extends Phaser.Scene {
 		// chauve_souris
 		const chauve_souris = new PrefabChauveSouris(this, 555, 195);
 		this.add.existing(chauve_souris);
+
+		// groupe_vie
+		const groupe_vie = this.add.layer();
+
+		// coeur
+		const coeur = new Coeur(this, 57, 45);
+		groupe_vie.add(coeur);
+
+		// coeur_1
+		const coeur_1 = new Coeur(this, 138, 45);
+		groupe_vie.add(coeur_1);
+
+		// coeur_2
+		const coeur_2 = new Coeur(this, 219, 45);
+		groupe_vie.add(coeur_2);
+
+		// coeur_3
+		const coeur_3 = new Coeur(this, 300, 45);
+		groupe_vie.add(coeur_3);
+
+		// coeur_4
+		const coeur_4 = new Coeur(this, 381, 45);
+		groupe_vie.add(coeur_4);
+
+		// coeur_5
+		const coeur_5 = new Coeur(this, 462, 45);
+		groupe_vie.add(coeur_5);
 
 		// collider_player_platforme
 		this.physics.add.collider(player, layerPlatforme.list);
@@ -184,6 +213,8 @@ export default class Level1 extends Phaser.Scene {
 		playerButton_2PlayerController.direction = "down";
 
 		this.player = player;
+		this.ennemyLayer = ennemyLayer;
+		this.groupe_vie = groupe_vie;
 		this.leftKey = leftKey;
 		this.rightKey = rightKey;
 		this.upKey = upKey;
@@ -194,6 +225,8 @@ export default class Level1 extends Phaser.Scene {
 	}
 
 	private player!: Joueur;
+	private ennemyLayer!: Phaser.GameObjects.Layer;
+	private groupe_vie!: Phaser.GameObjects.Layer;
 	private leftKey!: Phaser.Input.Keyboard.Key;
 	private rightKey!: Phaser.Input.Keyboard.Key;
 	private upKey!: Phaser.Input.Keyboard.Key;
@@ -231,10 +264,12 @@ export default class Level1 extends Phaser.Scene {
             }
 
         }, this);
+
 	}
 	update(time: number, delta: number): void {
 
-		this.physics.world.wrap(this.player, 5)
+		this.physics.world.wrap(this.player, 80)
+		this.physics.world.wrap(this.ennemyLayer.list, 80)
 		if (this.gameOver) {
 			return;
 		}

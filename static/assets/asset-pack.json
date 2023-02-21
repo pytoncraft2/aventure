@@ -27,6 +27,16 @@
                 "key": "chauve-souris"
             },
             {
+                "url": "assets/coeur.svg",
+                "svgConfig": {
+                    "width": 0,
+                    "height": 0,
+                    "scale": 0
+                },
+                "type": "svg",
+                "key": "coeur"
+            },
+            {
                 "url": "assets/dude.png",
                 "frameConfig": {
                     "frameWidth": 32,
