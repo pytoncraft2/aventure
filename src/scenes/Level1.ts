@@ -95,26 +95,33 @@ export default class Level1 extends Phaser.Scene {
 		const controlsLayer = this.add.layer();
 
 		// btn_up
-		const btn_up = new PlayerButton(this, 127, 934);
+		const btn_up = new PlayerButton(this, 1787, 728);
 		controlsLayer.add(btn_up);
 
 		// playerButton
-		const playerButton = new PlayerButton(this, 1493, 926, "ui", "btn-left");
+		const playerButton = new PlayerButton(this, 123, 966, "ui", "btn-left");
 		controlsLayer.add(playerButton);
 
 		// playerButton_1
-		const playerButton_1 = new PlayerButton(this, 1795, 930, "ui", "btn-right");
+		const playerButton_1 = new PlayerButton(this, 374, 967, "ui", "btn-right");
 		controlsLayer.add(playerButton_1);
 
 		// playerButton_2
-		const playerButton_2 = new PlayerButton(this, 456, 945, "ui", "btn-right");
-		playerButton_2.scaleX = 2.2625;
-		playerButton_2.scaleY = 2.2625;
-		playerButton_2.angle = 91;
+		const playerButton_2 = new PlayerButton(this, 1792, 967, "ui", "btn-right");
+		playerButton_2.scaleX = 1.6;
+		playerButton_2.scaleY = 1.6;
+		playerButton_2.angle = 0;
 		controlsLayer.add(playerButton_2);
 
 		// playerButton_3
-		const playerButton_3 = new PlayerButton(this, 1651, 613);
+		const playerButton_3 = new PlayerButton(this, 1565, 845);
+		playerButton_3.scaleX = 1.6088075096745973;
+		playerButton_3.scaleY = 1.6088075096745973;
+		playerButton_3.angle = -90;
+		playerButton_3.tintTopLeft = 15388681;
+		playerButton_3.tintTopRight = 15388681;
+		playerButton_3.tintBottomLeft = 15388681;
+		playerButton_3.tintBottomRight = 15388681;
 		controlsLayer.add(playerButton_3);
 
 		// ennemyLayer
@@ -204,6 +211,10 @@ export default class Level1 extends Phaser.Scene {
 		const btn_upPlayerController = PlayerController.getComponent(btn_up);
 		btn_upPlayerController.direction = "up";
 
+		// playerButton (components)
+		const playerButtonPlayerController = PlayerController.getComponent(playerButton);
+		playerButtonPlayerController.direction = "left";
+
 		// playerButton_1 (components)
 		const playerButton_1PlayerController = PlayerController.getComponent(playerButton_1);
 		playerButton_1PlayerController.direction = "right";
@@ -247,6 +258,8 @@ export default class Level1 extends Phaser.Scene {
 		this.editorCreate();
 
 		this.scale.startFullscreen();
+		this.input.addPointer(4);
+
 
         var FKey = this.input.keyboard.addKey('F');
 
@@ -295,10 +308,6 @@ export default class Level1 extends Phaser.Scene {
 		this.downDown = this.downDown || this.isKeyDown(this.downKey);
 
 
-
-		if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-			console.log("SPLASH!");
-		}
 		if (this.leftDown) {
 			this.player.moveLeft();
 		} else if (this.rightDown) {

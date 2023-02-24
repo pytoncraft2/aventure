@@ -14,21 +14,29 @@ export default class PlayerButton extends Phaser.GameObjects.Image {
 	constructor(scene: Phaser.Scene, x?: number, y?: number, texture?: string, frame?: number | string) {
 		super(scene, x ?? 0, y ?? 0, texture || "ui", frame ?? "btn-up");
 
-		this.scaleX = 2.2625;
-		this.scaleY = 2.2625;
-		this.alpha = 0.3;
-		this.alphaTopLeft = 0.3;
-		this.alphaTopRight = 0.3;
-		this.alphaBottomLeft = 0.3;
-		this.alphaBottomRight = 0.3;
+		this.scaleX = 1.6;
+		this.scaleY = 1.6;
+		this.alpha = 0.1;
+		this.alphaTopLeft = 0.1;
+		this.alphaTopRight = 0.1;
+		this.alphaBottomLeft = 0.1;
+		this.alphaBottomRight = 0.1;
 
 		// this (components)
 		new ScrollFactor(this);
 		const thisPlayerController = new PlayerController(this);
-		thisPlayerController.direction = "space";
+		thisPlayerController.direction = "up";
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		// this.setInteractive()
+		// this.on('gameobjectdown', function() {
+		// 	this.scene[thisPlayerController.direction + 'TouchDown'] = true
+		// 	console.log("POINTERDOWN");
+		// })
+		// this.on('gameobjectdown', function() {
+		// 	this.scene[thisPlayerController.direction + 'TouchDown'] = false
+		// 	console.log("POINTERUP");
+		// })
 		/* END-USER-CTR-CODE */
 	}
 

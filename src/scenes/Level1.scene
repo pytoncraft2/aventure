@@ -178,8 +178,8 @@
                     "label": "btn_up",
                     "components": [],
                     "PlayerController.direction": "up",
-                    "x": 127,
-                    "y": 934
+                    "x": 1787,
+                    "y": 728
                 },
                 {
                     "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
@@ -187,16 +187,18 @@
                     "unlock": [
                         "x",
                         "y",
-                        "texture"
+                        "texture",
+                        "PlayerController.direction"
                     ],
                     "label": "playerButton",
                     "components": [],
+                    "PlayerController.direction": "left",
                     "texture": {
                         "key": "ui",
                         "frame": "btn-left"
                     },
-                    "x": 1493,
-                    "y": 926
+                    "x": 123,
+                    "y": 966
                 },
                 {
                     "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
@@ -214,20 +216,20 @@
                         "key": "ui",
                         "frame": "btn-right"
                     },
-                    "x": 1795,
-                    "y": 930
+                    "x": 405,
+                    "y": 967
                 },
                 {
                     "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
                     "id": "e8826dc2-71a6-4f1c-8326-c974757b25a5",
                     "unlock": [
-                        "x",
-                        "y",
                         "texture",
                         "PlayerController.direction",
+                        "angle",
                         "scaleX",
                         "scaleY",
-                        "angle"
+                        "x",
+                        "y"
                     ],
                     "label": "playerButton_2",
                     "components": [],
@@ -236,23 +238,39 @@
                         "key": "ui",
                         "frame": "btn-right"
                     },
-                    "x": 456,
-                    "y": 945,
-                    "scaleX": 2.2625,
-                    "scaleY": 2.2625,
-                    "angle": 91
+                    "x": 1792,
+                    "y": 967,
+                    "scaleX": 1.6,
+                    "scaleY": 1.6,
+                    "angle": 0
                 },
                 {
                     "prefabId": "4ae7e16a-541c-4f3e-84b6-6b8e81cd667b",
                     "id": "7d4f19c0-a304-468b-af60-bd0fdd8cca8b",
                     "unlock": [
                         "x",
-                        "y"
+                        "y",
+                        "tintTopLeft",
+                        "tintTopRight",
+                        "tintBottomLeft",
+                        "tintBottomRight",
+                        "scaleX",
+                        "scaleY",
+                        "angle",
+                        "PlayerController.direction"
                     ],
                     "label": "playerButton_3",
                     "components": [],
-                    "x": 1651,
-                    "y": 613
+                    "PlayerController.direction": "space",
+                    "x": 1565,
+                    "y": 845,
+                    "scaleX": 1.6088075096745973,
+                    "scaleY": 1.6088075096745973,
+                    "angle": -90,
+                    "tintTopLeft": "#ead009",
+                    "tintTopRight": "#ead009",
+                    "tintBottomLeft": "#ead009",
+                    "tintBottomRight": "#ead009"
                 }
             ]
         },

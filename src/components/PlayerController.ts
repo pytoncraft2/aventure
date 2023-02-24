@@ -33,22 +33,22 @@ export default class PlayerController extends UserComponent {
 
 	update() {
 
-		const input = this.gameObject.scene.input;
+		// const input = this.gameObject.scene.input;
 
-		if (!input.activePointer.isDown) {
-			return;
-		}
+		// if (!input.activePointer.isDown) {
+			// return;
+		// }
 
-		const objects = input.hitTestPointer(input.activePointer);
+		// const objects = input.hitTestPointer(input.activePointer);
 
-		if (objects.indexOf(this.gameObject) >= 0) {
+		// if (objects.indexOf(this.gameObject) >= 0) {
 
-			console.log("update");
-			// console.log(this.scene.player);
-			console.log(this.direction);
+		// 	console.log("update");
+		// 	// console.log(this.scene.player);
+		// 	console.log(this.direction);
 
-			this.scene.player.pressButton(this.direction);
-		}		
+		// 	this.scene.player.pressButton(this.direction);
+		// }		
 	}
 	/* END-USER-CODE */
 }

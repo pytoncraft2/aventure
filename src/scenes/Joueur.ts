@@ -36,14 +36,6 @@ export default class Joueur extends Phaser.GameObjects.Image {
 	jump() {
 		this.body.checkCollision.none = true;
 		this.body.setVelocityY(-this.velY);
-		var tween = this.scene.tweens.add({
-    targets: this,
-    angle: this.flipX ? -20 : 20,
-    ease: 'Back',       // 'Cubic', 'Elastic', 'Bounce', 'Back'
-    duration: 300,
-    repeat: 0,            // -1: infinity
-    yoyo: true
-});
 		var timer = this.scene.time.delayedCall(500, () => (this.body.checkCollision.none = false), null, this);
 	}
 	stopMoving() {
@@ -66,6 +58,23 @@ export default class Joueur extends Phaser.GameObjects.Image {
 
 	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
 		console.log(direction);
+
+		// if (direction === "left")
+		// 	this.scene.leftDown = true;
+	
+		// if (direction === "up" && direction === "right") {
+
+		// }
+			// this.scene.upDown = true;
+		// if (direction === "right")
+		// {
+		// 	this.scene.rightDown = true;
+		// }
+		// if (direction === "down")
+		// {
+		// 	this.scene.downDown = true;
+		// }
+
 
 		switch (direction) {
 			case "left":

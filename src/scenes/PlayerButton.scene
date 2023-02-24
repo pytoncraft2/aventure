@@ -20,18 +20,18 @@
                 "ScrollFactor",
                 "PlayerController"
             ],
-            "PlayerController.direction": "space",
+            "PlayerController.direction": "up",
             "texture": {
                 "key": "ui",
                 "frame": "btn-up"
             },
-            "scaleX": 2.2625,
-            "scaleY": 2.2625,
-            "alpha": 0.3,
-            "alphaTopLeft": 0.3,
-            "alphaTopRight": 0.3,
-            "alphaBottomLeft": 0.3,
-            "alphaBottomRight": 0.3
+            "scaleX": 1.6,
+            "scaleY": 1.6,
+            "alpha": 0.1,
+            "alphaTopLeft": 0.1,
+            "alphaTopRight": 0.1,
+            "alphaBottomLeft": 0.1,
+            "alphaBottomRight": 0.1
         }
     ],
     "plainObjects": [],

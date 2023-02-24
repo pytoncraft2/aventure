@@ -39,13 +39,10 @@ export default class Level extends Phaser.Scene {
 		const herbe = new Herbe(this, 239, 1052);
 		this.add.existing(herbe);
 
-		// 55193917
-		this.add.image(209, 918, "55193917");
-
 		// text_2
 		const text_2 = this.add.text(960, 162.5, "", {});
 		text_2.setOrigin(0.5, 0.5);
-		text_2.text = "Aventure LTS";
+		text_2.text = "Huipat Aventure";
 		text_2.setStyle({ "color": "#000000ff", "fontFamily": "Open Sans", "fontSize": "46px", "fontStyle": "bold" });
 
 		// rectangle_2
@@ -54,6 +51,9 @@ export default class Level extends Phaser.Scene {
 		rectangle_2.scaleY = 0.037198060363111914;
 		rectangle_2.isFilled = true;
 		rectangle_2.fillColor = 8111652;
+
+		// feu
+		this.add.image(264, 920, "feu");
 
 		// bouton_jouer (components)
 		new InteractiveObjet(bouton_jouer);

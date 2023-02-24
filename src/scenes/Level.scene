@@ -102,17 +102,6 @@
             "list": []
         },
         {
-            "type": "Image",
-            "id": "9cdd0c2e-f7c1-49bd-a5df-b301ac73e02f",
-            "label": "55193917",
-            "components": [],
-            "texture": {
-                "key": "55193917"
-            },
-            "x": 209,
-            "y": 918
-        },
-        {
             "type": "Text",
             "id": "1e7b541c-23ed-4f9d-a3b0-90a8b3517575",
             "label": "text_2",
@@ -121,7 +110,7 @@
             "y": 162.5,
             "originX": 0.5,
             "originY": 0.5,
-            "text": "Aventure LTS",
+            "text": "Huipat Aventure",
             "fontFamily": "Open Sans",
             "fontSize": "46px",
             "fontStyle": "bold",
@@ -140,6 +129,17 @@
             "fillColor": "7BC624",
             "width": 128,
             "height": 128
+        },
+        {
+            "type": "Image",
+            "id": "ef016f58-65c2-45ad-94c1-d22a72a9f78e",
+            "label": "feu",
+            "components": [],
+            "texture": {
+                "key": "feu"
+            },
+            "x": 264,
+            "y": 920
         }
     ],
     "plainObjects": [],
