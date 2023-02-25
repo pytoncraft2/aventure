@@ -22,6 +22,7 @@
             "ArcadeComponent.active": true,
             "body.velocity.x": 1200,
             "body.velocity.y": -200,
+            "body.gravity.y": 300,
             "body.width": 128,
             "body.height": 128,
             "isFilled": true,

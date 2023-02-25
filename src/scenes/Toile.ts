@@ -22,6 +22,7 @@ export default class Toile extends Phaser.GameObjects.Rectangle {
 		scene.physics.add.existing(this, false);
 		this.body.velocity.x = 1200;
 		this.body.velocity.y = -200;
+		this.body.gravity.y = 300;
 		this.body.setSize(128, 128, false);
 		this.isFilled = true;
 		this.fillColor = 0;
