@@ -179,28 +179,52 @@ export default class Level1 extends Phaser.Scene {
 		const groupe_vie = this.add.layer();
 
 		// coeur
-		const coeur = new Coeur(this, 57, 45);
+		const coeur = new Coeur(this, 57, 46.606177095632425);
 		groupe_vie.add(coeur);
 
 		// coeur_1
-		const coeur_1 = new Coeur(this, 138, 45);
+		const coeur_1 = new Coeur(this, 124.12485775334338, 46.606177095632425);
 		groupe_vie.add(coeur_1);
 
 		// coeur_2
-		const coeur_2 = new Coeur(this, 219, 45);
+		const coeur_2 = new Coeur(this, 191.24971550668678, 46.606177095632425);
 		groupe_vie.add(coeur_2);
 
 		// coeur_3
-		const coeur_3 = new Coeur(this, 300, 45);
+		const coeur_3 = new Coeur(this, 258.37457326003016, 46.606177095632425);
 		groupe_vie.add(coeur_3);
 
 		// coeur_4
-		const coeur_4 = new Coeur(this, 381, 45);
+		const coeur_4 = new Coeur(this, 325.4994310133735, 46.606177095632425);
 		groupe_vie.add(coeur_4);
 
 		// coeur_5
-		const coeur_5 = new Coeur(this, 462, 45);
+		const coeur_5 = new Coeur(this, 392.62428876671686, 46.606177095632425);
 		groupe_vie.add(coeur_5);
+
+		// coeur_6
+		const coeur_6 = new Coeur(this, 459.7491465200602, 46.606177095632425);
+		groupe_vie.add(coeur_6);
+
+		// coeur_7
+		const coeur_7 = new Coeur(this, 526.8740042734036, 46.606177095632425);
+		groupe_vie.add(coeur_7);
+
+		// coeur_8
+		const coeur_8 = new Coeur(this, 593.9988620267469, 46.606177095632425);
+		groupe_vie.add(coeur_8);
+
+		// coeur_9
+		const coeur_9 = new Coeur(this, 661.1237197800903, 46.606177095632425);
+		groupe_vie.add(coeur_9);
+
+		// coeur_10
+		const coeur_10 = new Coeur(this, 728.2485775334336, 46.606177095632425);
+		groupe_vie.add(coeur_10);
+
+		// coeur_11
+		const coeur_11 = new Coeur(this, 795.373435286777, 46.606177095632425);
+		groupe_vie.add(coeur_11);
 
 		// groupe_projectile_toile
 		const groupe_projectile_toile = this.add.layer();
@@ -212,7 +236,7 @@ export default class Level1 extends Phaser.Scene {
 		this.physics.add.collider(ennemyLayer.list, layerPlatforme.list);
 
 		// collider_player_ennemy
-		this.physics.add.collider(ennemyLayer.list, player);
+		this.physics.add.collider(ennemyLayer.list, player, this.joueurEnnemyColision, undefined, this);
 
 		// collider_projectile_toile_ennemy
 		this.physics.add.overlap(groupe_projectile_toile.list, ennemyLayer.list, this.projectileToileColision, undefined, this);
@@ -406,6 +430,10 @@ export default class Level1 extends Phaser.Scene {
 		projectile.destroy(true)
 		// ennemy.setAlpha(0.2)
 		// console.log("COLISION");
+	}
+
+	joueurEnnemyColision(e:any, j:any) {
+		j.removeLife()
 	}
 
 	/* END-USER-CODE */

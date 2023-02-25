@@ -24,6 +24,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		/* START-USER-CTR-CODE */
 		this.velY = 1210;
 		this.velX = 860;
+		this.auto()
 		/* END-USER-CTR-CODE */
 	}
 
@@ -54,6 +55,45 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		this.body.setVelocityY(this.velY)
 
 		var timer = this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), null, this);  // delay in ms
+	}
+
+	auto() {
+		var timer = this.scene.time.addEvent({
+			delay: 100,                // ms
+			callback: () => this.moveRight(),
+			//args: [],
+			callbackScope: this,
+			loop: true
+		});
+		
+	}
+
+	removeLife() {
+		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)
+		// this.scene.time.delayedCall(200, )
+		// var timer = this.scene.time.addEvent({
+		// 	delay: 500,                // ms
+		// 	callback: () => this.setTintFill(0x4287ff),
+		// 	//args: [],
+		// 	callbackScope: thisArg,
+		// 	repeat: 4
+		// });
+		this.body.checkCollision.none = true;
+		this.body.allowGravity = false;
+		this.body.moves = false;
+		var tween = this.scene.tweens.add({
+			targets: this,
+			alpha: {from: 0.2, to: 1},
+			duration: 200,
+			repeat: 3,            // -1: infinity
+			yoyo: false,
+			onComplete: () => {
+				this.setAlpha(1);
+				this.body.checkCollision.none = false;
+				this.body.allowGravity = true;
+				this.body.moves = true;
+			}
+		});
 	}
 
 	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
