@@ -556,7 +556,8 @@
             "object1": "groupe_projectile_toile.list",
             "object2": "ennemyLayer.list",
             "overlapOnly": true,
-            "collideCallback": "this.projectileToileColision"
+            "collideCallback": "this.projectileToileColision",
+            "callbackContext": "this"
         }
     ],
     "meta": {

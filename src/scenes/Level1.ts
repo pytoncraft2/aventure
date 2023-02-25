@@ -215,7 +215,7 @@ export default class Level1 extends Phaser.Scene {
 		this.physics.add.collider(ennemyLayer.list, player);
 
 		// collider_projectile_toile_ennemy
-		this.physics.add.overlap(groupe_projectile_toile.list, ennemyLayer.list, this.projectileToileColision);
+		this.physics.add.overlap(groupe_projectile_toile.list, ennemyLayer.list, this.projectileToileColision, undefined, this);
 
 		// feu (components)
 		new InteractiveObjet(feu);
@@ -376,10 +376,10 @@ export default class Level1 extends Phaser.Scene {
 		} else {
 			if (ennemy.piege.scale <= 0.38) {
 				console.log("ENCORE ??", ennemy.piege.scale);
-				
+
 				ennemy.piege.resetTimer()
 				ennemy.piege.scale += 0.1;
-				
+
 			} else {
 				console.log("ELLLSE");
 				ennemy.piege.follow(undefined, ennemy)
@@ -387,6 +387,7 @@ export default class Level1 extends Phaser.Scene {
 				ennemy.body.angularVelocity = 400;
 				ennemy.piege.body.angularVelocity = 400;
 				ennemy.body.velocity.x -= 200;
+				this.time.delayedCall(2000, () => {ennemy.piege.destroy(true); ennemy.destroy(true)})
 				// ennemy.piege.destroy(true)
 				// ennemy.destroy(true)
 				// désactivation du stop

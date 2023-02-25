@@ -24,6 +24,7 @@ export default class Toile extends Phaser.GameObjects.Rectangle {
 		this.body.velocity.y = -200;
 		this.body.setSize(128, 128, false);
 		this.isFilled = true;
+		this.fillColor = 0;
 
 		/* START-USER-CTR-CODE */
 		this.scene.time.delayedCall(400, () => this.destroy(true), undefined, this)
