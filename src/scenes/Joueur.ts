@@ -58,9 +58,10 @@ export default class Joueur extends Phaser.GameObjects.Image {
 	}
 
 	auto() {
+		this.scene.rightDown = true;
 		var timer = this.scene.time.addEvent({
 			delay: 100,                // ms
-			callback: () => this.moveRight(),
+			callback: () => /*this.moveRight()*/{},
 			//args: [],
 			callbackScope: this,
 			loop: true
@@ -70,20 +71,13 @@ export default class Joueur extends Phaser.GameObjects.Image {
 
 	removeLife() {
 		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)
-		// this.scene.time.delayedCall(200, )
-		// var timer = this.scene.time.addEvent({
-		// 	delay: 500,                // ms
-		// 	callback: () => this.setTintFill(0x4287ff),
-		// 	//args: [],
-		// 	callbackScope: thisArg,
-		// 	repeat: 4
-		// });
 		this.body.checkCollision.none = true;
 		this.body.allowGravity = false;
 		this.body.moves = false;
 		var tween = this.scene.tweens.add({
 			targets: this,
 			alpha: {from: 0.2, to: 1},
+			scale: {from: 0.9, to:1},
 			duration: 200,
 			repeat: 3,            // -1: infinity
 			yoyo: false,

@@ -410,6 +410,8 @@ export default class Level1 extends Phaser.Scene {
 				ennemy.piege.follow(undefined, ennemy)
 				// ennemy.body.angular
 				ennemy.body.angularVelocity = 400;
+				ennemy.body.checkCollision.right = false;
+				ennemy.body.checkCollision.left = false;
 				ennemy.piege.body.angularVelocity = 400;
 				ennemy.body.velocity.x -= 200;
 				this.time.delayedCall(2000, () => {ennemy.piege.destroy(true); ennemy.destroy(true)})
