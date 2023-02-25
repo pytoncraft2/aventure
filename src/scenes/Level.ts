@@ -47,8 +47,8 @@ export default class Level extends Phaser.Scene {
 
 		// rectangle_2
 		const rectangle_2 = this.add.rectangle(961, 188, 128, 128);
-		rectangle_2.scaleX = 2.1732307923268;
-		rectangle_2.scaleY = 0.037198060363111914;
+		rectangle_2.scaleX = 2.579608498064135;
+		rectangle_2.scaleY = 0.05439157547258821;
 		rectangle_2.isFilled = true;
 		rectangle_2.fillColor = 8111652;
 

@@ -354,7 +354,12 @@
                         "y",
                         "scaleX",
                         "scaleY",
-                        "alpha"
+                        "alpha",
+                        "tintFill",
+                        "tintTopLeft",
+                        "tintTopRight",
+                        "tintBottomLeft",
+                        "tintBottomRight"
                     ],
                     "label": "araigne_4",
                     "components": [],
@@ -362,7 +367,12 @@
                     "y": 518.3007205743385,
                     "scaleX": 1,
                     "scaleY": 1,
-                    "alpha": 0.5
+                    "alpha": 0.5,
+                    "tintTopLeft": "#edff44",
+                    "tintTopRight": "#edff44",
+                    "tintBottomLeft": "#edff44",
+                    "tintBottomRight": "#edff44",
+                    "tintFill": true
                 },
                 {
                     "prefabId": "ba1ef92c-10a1-403f-b1c9-b1a9bc91171c",
@@ -474,6 +484,14 @@
                     "y": 45
                 }
             ]
+        },
+        {
+            "type": "Layer",
+            "id": "f699a51a-4ecb-4b8f-a80e-cd4c7f41ff3e",
+            "label": "groupe_projectile_toile",
+            "scope": "PUBLIC",
+            "components": [],
+            "list": []
         }
     ],
     "plainObjects": [
@@ -529,6 +547,16 @@
             "scope": "METHOD",
             "object1": "ennemyLayer.list",
             "object2": "player"
+        },
+        {
+            "id": "d5af3a30-628e-4db1-82f9-b1967d35b2be",
+            "type": "Collider",
+            "label": "collider_projectile_toile_ennemy",
+            "scope": "METHOD",
+            "object1": "groupe_projectile_toile.list",
+            "object2": "ennemyLayer.list",
+            "overlapOnly": true,
+            "collideCallback": "this.projectileToileColision"
         }
     ],
     "meta": {

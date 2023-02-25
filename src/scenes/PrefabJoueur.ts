@@ -58,23 +58,7 @@ export default class PrefabJoueur extends Phaser.Physics.Arcade.Sprite {
 		this.play("left", true)
 	}
 
-	pressButton(direction: "left" | "right" | "up") {
-		console.log(direction);
 
-		switch (direction) {
-			case "left":
-				this.scene.leftDown = true;
-				break;
-
-			case "right":
-				this.scene.rightDown = true;
-				break;
-
-			case "up":
-				this.scene.upDown = true;
-				break;
-		}
-	}
 	/* END-USER-CODE */
 }
 

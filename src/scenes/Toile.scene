@@ -1,0 +1,51 @@
+{
+    "id": "7f0092c1-0a32-49f7-bcb8-8ebb81a250fa",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "1497c03f-16d6-4577-bd87-1cff920a3218",
+            "label": "rectangle_1",
+            "components": [],
+            "scaleX": 0.7885172445568717,
+            "scaleY": 0.04563370658790045,
+            "ArcadeComponent.active": true,
+            "body.velocity.x": 1200,
+            "body.velocity.y": -200,
+            "body.width": 128,
+            "body.height": 128,
+            "isFilled": true,
+            "width": 128,
+            "height": 128
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "direction",
+            "label": "Direction",
+            "tooltip": "Direction du tir",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
+}

@@ -13,6 +13,8 @@ import Araigne from "./Araigne";
 import PrefabChauveSouris from "./PrefabChauveSouris";
 import Coeur from "./Coeur";
 /* START-USER-IMPORTS */
+import Toile from "./Toile";
+import ToilePiege from "./ToilePiege";
 /* END-USER-IMPORTS */
 
 export default class Level1 extends Phaser.Scene {
@@ -103,7 +105,7 @@ export default class Level1 extends Phaser.Scene {
 		controlsLayer.add(playerButton);
 
 		// playerButton_1
-		const playerButton_1 = new PlayerButton(this, 374, 967, "ui", "btn-right");
+		const playerButton_1 = new PlayerButton(this, 405, 967, "ui", "btn-right");
 		controlsLayer.add(playerButton_1);
 
 		// playerButton_2
@@ -156,6 +158,11 @@ export default class Level1 extends Phaser.Scene {
 		araigne_4.scaleX = 1;
 		araigne_4.scaleY = 1;
 		araigne_4.alpha = 0.5;
+		araigne_4.tintFill = true;
+		araigne_4.tintTopLeft = 15597380;
+		araigne_4.tintTopRight = 15597380;
+		araigne_4.tintBottomLeft = 15597380;
+		araigne_4.tintBottomRight = 15597380;
 		ennemyLayer.add(araigne_4);
 
 		// araigne_5
@@ -195,6 +202,9 @@ export default class Level1 extends Phaser.Scene {
 		const coeur_5 = new Coeur(this, 462, 45);
 		groupe_vie.add(coeur_5);
 
+		// groupe_projectile_toile
+		const groupe_projectile_toile = this.add.layer();
+
 		// collider_player_platforme
 		this.physics.add.collider(player, layerPlatforme.list);
 
@@ -203,6 +213,9 @@ export default class Level1 extends Phaser.Scene {
 
 		// collider_player_ennemy
 		this.physics.add.collider(ennemyLayer.list, player);
+
+		// collider_projectile_toile_ennemy
+		this.physics.add.overlap(groupe_projectile_toile.list, ennemyLayer.list, this.projectileToileColision);
 
 		// feu (components)
 		new InteractiveObjet(feu);
@@ -223,9 +236,14 @@ export default class Level1 extends Phaser.Scene {
 		const playerButton_2PlayerController = PlayerController.getComponent(playerButton_2);
 		playerButton_2PlayerController.direction = "down";
 
+		// playerButton_3 (components)
+		const playerButton_3PlayerController = PlayerController.getComponent(playerButton_3);
+		playerButton_3PlayerController.direction = "space";
+
 		this.player = player;
 		this.ennemyLayer = ennemyLayer;
 		this.groupe_vie = groupe_vie;
+		this.groupe_projectile_toile = groupe_projectile_toile;
 		this.leftKey = leftKey;
 		this.rightKey = rightKey;
 		this.upKey = upKey;
@@ -238,6 +256,7 @@ export default class Level1 extends Phaser.Scene {
 	private player!: Joueur;
 	private ennemyLayer!: Phaser.GameObjects.Layer;
 	private groupe_vie!: Phaser.GameObjects.Layer;
+	public groupe_projectile_toile!: Phaser.GameObjects.Layer;
 	private leftKey!: Phaser.Input.Keyboard.Key;
 	private rightKey!: Phaser.Input.Keyboard.Key;
 	private upKey!: Phaser.Input.Keyboard.Key;
@@ -307,6 +326,18 @@ export default class Level1 extends Phaser.Scene {
 		// this.spaceDown = this.spaceDown || this.isKeyDown(this.spaceKey);
 		this.downDown = this.downDown || this.isKeyDown(this.downKey);
 
+		if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+			const t = new Toile(this, this.player.x, this.player.y)
+			t.body.velocity.x = this.player.flipX ? -1200 : 1200
+			const mytoile = this.add.existing(t);
+			// Toile.velo
+			this.groupe_projectile_toile.add(mytoile)
+			// const t = new Toile(this, this.player.x, this.player.y, 400, 400);
+			// const t = new this.toile(this, this.player.x, this.player.y)
+
+
+			console.log("ATTAQUE");
+		}
 
 		if (this.leftDown) {
 			this.player.moveLeft();
@@ -323,7 +354,56 @@ export default class Level1 extends Phaser.Scene {
 			this.player.jump();
 		}
 
-		this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = false;
+		// if (this.spaceDown) {
+			// console.log("ATTAQUE");
+
+		// }
+
+		this.leftDown = this.rightDown = this.upDown = this.downDown = false;
+	}
+
+	projectileToileColision(projectile: any, ennemy: ToilePiege) {
+		console.log(ennemy.piege);
+		if (!ennemy.piege) {
+			console.log("NON CREER");
+
+			const piege = new ToilePiege(ennemy.scene, ennemy.x, ennemy.y)
+			ennemy.piege = piege;
+			ennemy.piege.follow(ennemy)
+
+			ennemy.scene.add.existing(piege);
+
+		} else {
+			if (ennemy.piege.scale <= 0.38) {
+				console.log("ENCORE ??", ennemy.piege.scale);
+				
+				ennemy.piege.resetTimer()
+				ennemy.piege.scale += 0.1;
+				
+			} else {
+				console.log("ELLLSE");
+				ennemy.piege.follow(undefined, ennemy)
+				// ennemy.body.angular
+				ennemy.body.angularVelocity = 400;
+				ennemy.piege.body.angularVelocity = 400;
+				ennemy.body.velocity.x -= 200;
+				// ennemy.piege.destroy(true)
+				// ennemy.destroy(true)
+				// désactivation du stop
+
+				// ennemy.piege.stopEnnemy(ennemy, false)
+				// ennemy.piege.tintTopLeft = 15388681;
+				// ennemy.piege.tintTopRight = 15388681;
+				// ennemy.piege.tintBottomLeft = 15388681;
+				// ennemy.piege.tintBottomRight = 15388681;
+				// ennemy.piege.setTint(0xedff44);
+			}
+
+		}
+
+		projectile.destroy(true)
+		// ennemy.setAlpha(0.2)
+		// console.log("COLISION");
 	}
 
 	/* END-USER-CODE */

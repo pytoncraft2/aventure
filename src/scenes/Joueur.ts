@@ -58,24 +58,6 @@ export default class Joueur extends Phaser.GameObjects.Image {
 
 	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
 		console.log(direction);
-
-		// if (direction === "left")
-		// 	this.scene.leftDown = true;
-	
-		// if (direction === "up" && direction === "right") {
-
-		// }
-			// this.scene.upDown = true;
-		// if (direction === "right")
-		// {
-		// 	this.scene.rightDown = true;
-		// }
-		// if (direction === "down")
-		// {
-		// 	this.scene.downDown = true;
-		// }
-
-
 		switch (direction) {
 			case "left":
 				this.scene.leftDown = true;

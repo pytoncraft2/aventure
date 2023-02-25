@@ -85,6 +85,11 @@
                 "key": "tente"
             },
             {
+                "url": "assets/toile.png",
+                "type": "image",
+                "key": "toile"
+            },
+            {
                 "atlasURL": "assets/atlas/ui.json",
                 "textureURL": "assets/atlas/ui.png",
                 "type": "atlas",
