@@ -12,6 +12,7 @@ import PlayerController from "../components/PlayerController";
 import Araigne from "./Araigne";
 import PrefabChauveSouris from "./PrefabChauveSouris";
 import Coeur from "./Coeur";
+import EcranInfo from "./EcranInfo";
 /* START-USER-IMPORTS */
 import Toile from "./Toile";
 import ToilePiege from "./ToilePiege";
@@ -205,6 +206,10 @@ export default class Level1 extends Phaser.Scene {
 		// groupe_projectile_toile
 		const groupe_projectile_toile = this.add.layer();
 
+		// rectangle_1
+		const rectangle_1 = new EcranInfo(this, 965, 492);
+		this.add.existing(rectangle_1);
+
 		// collider_player_platforme
 		this.physics.add.collider(player, layerPlatforme.list);
 
@@ -302,8 +307,8 @@ export default class Level1 extends Phaser.Scene {
 
 		this.physics.world.wrap(this.player, 80)
 		this.physics.world.wrap(this.ennemyLayer.list, 80)
-		if (this.gameOver) {
-			return;
+		if (this.ennemyLayer.list.length === 0) {
+
 		}
 		this.updatePlayer();
 	}
@@ -319,6 +324,7 @@ export default class Level1 extends Phaser.Scene {
 	}
 
 	private updatePlayer() {
+
 
 		this.leftDown = this.leftDown || this.isKeyDown(this.leftKey);
 		this.rightDown = this.rightDown || this.isKeyDown(this.rightKey);

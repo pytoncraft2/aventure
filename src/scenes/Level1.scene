@@ -492,6 +492,20 @@
             "scope": "PUBLIC",
             "components": [],
             "list": []
+        },
+        {
+            "prefabId": "1f129a30-e7dc-4335-aa9f-c65e2d324b34",
+            "id": "5a702511-7a73-4834-be9c-94711effdd22",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "rectangle_1",
+            "components": [],
+            "x": 965,
+            "y": 492,
+            "nestedPrefabs": [],
+            "list": []
         }
     ],
     "plainObjects": [
