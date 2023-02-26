@@ -24,7 +24,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		/* START-USER-CTR-CODE */
 		this.velY = 1210;
 		this.velX = 860;
-		this.auto()
+		// this.auto()
 		/* END-USER-CTR-CODE */
 	}
 
@@ -57,17 +57,17 @@ export default class Joueur extends Phaser.GameObjects.Image {
 		var timer = this.scene.time.delayedCall(50, () => (this.body.checkCollision.none = false), null, this);  // delay in ms
 	}
 
-	auto() {
-		this.scene.rightDown = true;
-		var timer = this.scene.time.addEvent({
-			delay: 100,                // ms
-			callback: () => /*this.moveRight()*/{},
-			//args: [],
-			callbackScope: this,
-			loop: true
-		});
+	// auto() {
+	// 	this.scene.rightDown = true;
+	// 	var timer = this.scene.time.addEvent({
+	// 		delay: 100,                // ms
+	// 		callback: () => /*this.moveRight()*/{},
+	// 		//args: [],
+	// 		callbackScope: this,
+	// 		loop: true
+	// 	});
 		
-	}
+	// }
 
 	removeLife() {
 		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)

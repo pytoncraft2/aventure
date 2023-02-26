@@ -23,6 +23,15 @@ export default class PlayerController extends UserComponent {
 			this.scene[this.direction + 'Down'] = true;
 			console.log("DOWN!");
 		}, this);
+
+		if (this.direction === "left" || "right" || "up" || "down") {
+			this.gameObject.on('pointerup', function (pointer, localX, localY, event) {
+				// this.scene.spaceDown = true;
+				this.scene[this.direction + 'Down'] = false;
+				console.log("UP!");
+			}, this);
+
+		}
 		/* END-USER-CTR-CODE */
 	}
 
@@ -36,7 +45,7 @@ export default class PlayerController extends UserComponent {
 
 	/* START-USER-CODE */
 
-	update() {
+	// update() {
 
 		// const input = this.gameObject.scene.input;
 
@@ -52,7 +61,7 @@ export default class PlayerController extends UserComponent {
 
 		// 	this.scene.player.pressButton(this.direction);
 		// }
-	}
+	// }
 	/* END-USER-CODE */
 }
 

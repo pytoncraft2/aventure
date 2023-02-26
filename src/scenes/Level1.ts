@@ -302,7 +302,7 @@ export default class Level1 extends Phaser.Scene {
 		this.editorCreate();
 
 		this.scale.startFullscreen();
-		this.input.addPointer(4);
+		this.input.addPointer(3);
 
 
         var FKey = this.input.keyboard.addKey('F');
@@ -357,6 +357,7 @@ export default class Level1 extends Phaser.Scene {
 		}
 		if (this.spaceDown) {
 			this.envoieProjectileToile()
+			this.spaceDown = false;
 			// console.log("SPACE ATTAQUE");
 			// this.spaceDown = false;
 		}
@@ -381,7 +382,7 @@ export default class Level1 extends Phaser.Scene {
 
 		// }
 
-		this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = this.spaceDownTouch = false;
+		// this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = this.spaceDownTouch = false;
 	}
 
 	projectileToileColision(projectile: any, ennemy: ToilePiege) {
