@@ -32,8 +32,11 @@ export default class Araigne extends Phaser.GameObjects.Image {
 	/* START-USER-CODE */
 
 
-update() {
-	this.scene.physics.world.wrap(this, 100);
+preUpdate() {
+	console.log("UPDATE");
+	
+	// this.scene.physics.world.wrap(this, 100);
+	// console.log(this.piege);
 }
 	/* END-USER-CODE */
 }

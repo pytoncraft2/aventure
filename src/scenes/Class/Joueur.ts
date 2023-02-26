@@ -83,11 +83,11 @@ export default class Joueur extends Phaser.GameObjects.Image {
 			yoyo: false,
 			onComplete: () => {
 				this.setAlpha(1);
-				this.body.checkCollision.none = false;
 				this.body.allowGravity = true;
 				this.body.moves = true;
 			}
 		});
+		this.scene.time.delayedCall(200, () => this.body.checkCollision.none = false, undefined, this)
 	}
 
 	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
