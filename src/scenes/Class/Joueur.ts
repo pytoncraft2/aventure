@@ -71,23 +71,25 @@ export default class Joueur extends Phaser.GameObjects.Image {
 
 	removeLife() {
 		this.scene.groupe_vie.length != 0 && this.scene.groupe_vie.removeAt(this.scene.groupe_vie.length -1)
-		this.body.checkCollision.none = true;
-		this.body.allowGravity = false;
-		this.body.moves = false;
+		this.body.enable = false;
+		// this.body.checkCollision.none = true;
+		// this.body.allowGravity = false;
+		// this.body.moves = false;
 		var tween = this.scene.tweens.add({
 			targets: this,
 			alpha: {from: 0.2, to: 1},
 			scale: {from: 0.9, to:1},
-			duration: 200,
+			duration: 230,
 			repeat: 3,            // -1: infinity
 			yoyo: false,
 			onComplete: () => {
 				this.setAlpha(1);
-				this.body.allowGravity = true;
-				this.body.moves = true;
+				this.body.enable = true;
+				// this.body.allowGravity = true;
+				// this.body.moves = true;
 			}
 		});
-		this.scene.time.delayedCall(200, () => this.body.checkCollision.none = false, undefined, this)
+		// this.scene.time.delayedCall(500, () => this.body.checkCollision.none = false, undefined, this)
 	}
 
 	pressButton(direction: "left" | "right" | "up" | "down" | "space") {
@@ -109,7 +111,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 				this.scene.downDown = true;
 				break;
 			case "space":
-				this.scene.spaceDown = true;
+				this.scene.spaceDownTouch = true;
 				break;
 		}
 	}

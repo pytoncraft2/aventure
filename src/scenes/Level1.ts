@@ -293,6 +293,7 @@ export default class Level1 extends Phaser.Scene {
 	private upDown = false;
 	private downDown = false;
 	private spaceDown = false;
+	private spaceDownTouch = false;
 
 	// Write your code here
 
@@ -348,20 +349,16 @@ export default class Level1 extends Phaser.Scene {
 		this.leftDown = this.leftDown || this.isKeyDown(this.leftKey);
 		this.rightDown = this.rightDown || this.isKeyDown(this.rightKey);
 		this.upDown = this.upDown || this.isKeyDown(this.upKey) ;
-		// this.spaceDown = this.spaceDown || this.isKeyDown(this.spaceKey);
+		this.spaceDown = this.spaceDown || this.isKeyDown(this.spaceKey) || this.spaceDownTouch;
 		this.downDown = this.downDown || this.isKeyDown(this.downKey);
 
 		if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-			const t = new Toile(this, this.player.x, this.player.y)
-			t.body.velocity.x = this.player.flipX ? -1200 : 1200
-			const mytoile = this.add.existing(t);
-			// Toile.velo
-			this.groupe_projectile_toile.add(mytoile)
-			// const t = new Toile(this, this.player.x, this.player.y, 400, 400);
-			// const t = new this.toile(this, this.player.x, this.player.y)
-
-
-			console.log("ATTAQUE");
+			this.envoieProjectileToile()
+		}
+		if (this.spaceDown) {
+			this.envoieProjectileToile()
+			// console.log("SPACE ATTAQUE");
+			// this.spaceDown = false;
 		}
 
 		if (this.leftDown) {
@@ -384,7 +381,7 @@ export default class Level1 extends Phaser.Scene {
 
 		// }
 
-		this.leftDown = this.rightDown = this.upDown = this.downDown = false;
+		this.leftDown = this.rightDown = this.upDown = this.downDown = this.spaceDown = this.spaceDownTouch = false;
 	}
 
 	projectileToileColision(projectile: any, ennemy: ToilePiege) {
@@ -436,6 +433,19 @@ export default class Level1 extends Phaser.Scene {
 
 	joueurEnnemyColision(e:any, j:any) {
 		j.removeLife()
+	}
+
+	envoieProjectileToile() {
+		const t = new Toile(this, this.player.x, this.player.y)
+		t.body.velocity.x = this.player.flipX ? -1200 : 1200
+		const mytoile = this.add.existing(t);
+		// Toile.velo
+		this.groupe_projectile_toile.add(mytoile)
+		// const t = new Toile(this, this.player.x, this.player.y, 400, 400);
+		// const t = new this.toile(this, this.player.x, this.player.y)
+
+
+		console.log("ATTAQUE TOILE");	
 	}
 
 	/* END-USER-CODE */

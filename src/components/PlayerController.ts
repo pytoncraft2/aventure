@@ -18,6 +18,11 @@ export default class PlayerController extends UserComponent {
 
 		/* START-USER-CTR-CODE */
 		this.gameObject.setInteractive();
+		this.gameObject.on('pointerdown', function(pointer, localX, localY, event){
+			// this.scene.spaceDown = true;
+			this.scene[this.direction + 'Down'] = true;
+			console.log("DOWN!");
+		}, this);
 		/* END-USER-CTR-CODE */
 	}
 
@@ -33,18 +38,20 @@ export default class PlayerController extends UserComponent {
 
 	update() {
 
-		const input = this.gameObject.scene.input;
+		// const input = this.gameObject.scene.input;
 
-		if (!input.activePointer.isDown) {
-			return;
-		}
+		// if (!input.activePointer.isDown) {
+		// 	return;
+		// }
 
-		const objects = input.hitTestPointer(input.activePointer);
+		// const objects = input.hitTestPointer(input.activePointer);
+		// console.log(objects);
+		
 
-		if (objects.indexOf(this.gameObject) >= 0) {
+		// if (objects.indexOf(this.gameObject) >= 0) {
 
-			this.scene.player.pressButton(this.direction);
-		}
+		// 	this.scene.player.pressButton(this.direction);
+		// }
 	}
 	/* END-USER-CODE */
 }
