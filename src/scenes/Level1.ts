@@ -4,17 +4,17 @@
 /* START OF COMPILED CODE */
 
 import Phaser from "phaser";
-import Joueur from "./Class/Joueur";
+import Joueur from "./Joueur";
 import Platforme from "./Platforme";
 import InteractiveObjet from "../components/InteractiveObjet";
 import PlayerButton from "./PlayerButton";
 import PlayerController from "../components/PlayerController";
-import Araigne from "./Class/Araigne";
+import Araigne from "./Araigne";
 import PrefabChauveSouris from "./PrefabChauveSouris";
 import Coeur from "./Coeur";
 /* START-USER-IMPORTS */
-import Toile from "./Class/Elements/Toile";
-import ToilePiege from "./Class/Elements/ToilePiege";
+import Toile from "./Toile";
+import ToilePiege from "./ToilePiege";
 /* END-USER-IMPORTS */
 
 export default class Level1 extends Phaser.Scene {
@@ -45,7 +45,7 @@ export default class Level1 extends Phaser.Scene {
 		const spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
 		// player
-		const player = new Joueur(this, 247, 296);
+		const player = new Joueur(this, 247, 143);
 		this.add.existing(player);
 
 		// tente
