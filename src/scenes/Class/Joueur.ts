@@ -19,6 +19,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 
 		scene.physics.add.existing(this, false);
 		this.body.gravity.y = 1000;
+		this.body.collideWorldBounds = true;
 		this.body.setSize(200, 189, false);
 
 		/* START-USER-CTR-CODE */
@@ -66,7 +67,7 @@ export default class Joueur extends Phaser.GameObjects.Image {
 	// 		callbackScope: this,
 	// 		loop: true
 	// 	});
-		
+
 	// }
 
 	removeLife() {

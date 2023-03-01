@@ -23,6 +23,7 @@
             "ArcadeComponent.active": true,
             "body.velocity.x": -200,
             "body.bounce.x": 1,
+            "collideWorldBounds": true,
             "body.width": 228,
             "body.height": 79
         }

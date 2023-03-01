@@ -23,6 +23,7 @@
             "x": 11,
             "ArcadeComponent.active": true,
             "body.gravity.y": 1000,
+            "collideWorldBounds": true,
             "body.width": 200,
             "body.height": 189
         }
